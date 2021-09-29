@@ -13,8 +13,7 @@ struct ScrummaseterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MeetingView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ScrumsView(scrums: DailyScrum.data)
         }
     }
 }
