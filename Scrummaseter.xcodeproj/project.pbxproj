@@ -43,6 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4844B26827047E2F00EE0AEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				489D2E282704017B00F3CFB5 /* CardView.swift */,
+				489D2E2B2704068500F3CFB5 /* ScrumsView.swift */,
+				485A66AC26FEBA97000A3D48 /* MeetingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4844B26927047E4700EE0AEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				489D2E25270400AC00F3CFB5 /* DailyScrum.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		485A669E26FEBA97000A3D48 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +80,14 @@
 		485A66A926FEBA97000A3D48 /* Scrummaseter */ = {
 			isa = PBXGroup;
 			children = (
+				4844B26927047E4700EE0AEA /* Model */,
+				4844B26827047E2F00EE0AEA /* Views */,
 				485A66AA26FEBA97000A3D48 /* ScrummaseterApp.swift */,
-				485A66AC26FEBA97000A3D48 /* MeetingView.swift */,
 				485A66AE26FEBA9E000A3D48 /* Assets.xcassets */,
 				485A66B326FEBA9E000A3D48 /* Persistence.swift */,
 				485A66B826FEBA9E000A3D48 /* Info.plist */,
 				485A66B526FEBA9E000A3D48 /* Scrummaseter.xcdatamodeld */,
 				485A66B026FEBA9E000A3D48 /* Preview Content */,
-				489D2E25270400AC00F3CFB5 /* DailyScrum.swift */,
-				489D2E2B2704068500F3CFB5 /* ScrumsView.swift */,
-				489D2E282704017B00F3CFB5 /* CardView.swift */,
 			);
 			path = Scrummaseter;
 			sourceTree = "<group>";
