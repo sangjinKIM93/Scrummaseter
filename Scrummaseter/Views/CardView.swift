@@ -11,7 +11,7 @@ struct CardView: View {
     let scrum: DailyScrum
     var body: some View {
         VStack(alignment: .leading) {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text(scrum.title)
                 .font(.headline)
             Spacer()
             HStack {

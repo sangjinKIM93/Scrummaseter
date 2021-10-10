@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct ScrummaseterApp: App {
-    let persistenceController = PersistenceController.shared
+    @State private var scrums = DailyScrum.data
 
     var body: some Scene {
         WindowGroup {
-            ScrumsView(scrums: DailyScrum.data)
+            NavigationView {
+                ScrumsView(scrums: $scrums)
+            }
         }
     }
 }
