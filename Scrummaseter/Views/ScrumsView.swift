@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
+    @Environment(\.scenePhase) private var scenePhase   // 화면이 inactive 상태에 들어갔는지 확인할 수 있는 변수
     @State private var isPresented = false
     @State private var newScrumData = DailyScrum.Data()
+    let saveAction: () -> Void  // 이런식으로 뷰에 closure 만들 수 있어 (delegate 대신 쓰는거지)
     
     var body: some View {
         List {
@@ -39,6 +41,9 @@ struct ScrumsView: View {
                     })
             }
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
     
     // 그냥 $ 붙여서 넘겨줘도 되는데, 정확하게 하려고 검증하는듯?
@@ -53,7 +58,7 @@ struct ScrumsView: View {
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ScrumsView(scrums: .constant(DailyScrum.data))
+            ScrumsView(scrums: .constant(DailyScrum.data), saveAction: {})
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct History: Identifiable {
+struct History: Identifiable, Codable {
     var id: UUID
     var attendees: [String]
     var lengthInMinutes: Int
