@@ -14,15 +14,15 @@ struct DetailView: View {
     
     var body: some View {
         List {
-            Section(header: Text("Meeting Info")) {
+            Section(header: Text("Habit Info")) {
                 NavigationLink(destination: MeetingView(scrum: $scrum)) {
-                    Label("Starting Meeting", systemImage: "timer")
+                    Label("Focusing Habit", systemImage: "timer")
                         .font(.headline)
                         .foregroundColor(.accentColor)
                         .accessibilityLabel(Text("Start meeting"))
                 }
                 HStack {
-                    Label("Length", systemImage: "clock")
+                    Label("Length(per Day)", systemImage: "clock")
                         .accessibilityLabel(Text("Meeting length"))
                     Spacer()
                     Text("\(scrum.lengthInMinutes) minutes")
@@ -35,16 +35,16 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .ignore)
             }
-            Section(header: Text("Attendees")) {
-                ForEach(scrum.attendees, id: \.self) { attendee in
-                    Label(attendee, systemImage: "person")
-                        .accessibilityLabel(Text("Person"))
-                        .accessibilityValue(Text(attendee))
-                }
-            }
+//            Section(header: Text("Attendees")) {
+//                ForEach(scrum.attendees, id: \.self) { attendee in
+//                    Label(attendee, systemImage: "person")
+//                        .accessibilityLabel(Text("Person"))
+//                        .accessibilityValue(Text(attendee))
+//                }
+//            }
             Section(header: Text("History")) {
                 if scrum.history.isEmpty {
-                    Label("No meetings yet", systemImage: "calendar.badge.exclamationmark")
+                    Label("No History yet", systemImage: "calendar.badge.exclamationmark")
                 }
                 ForEach(scrum.history) { history in
                     HStack {

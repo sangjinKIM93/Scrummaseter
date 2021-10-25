@@ -23,7 +23,7 @@ struct ScrumsView: View {
                 .listRowBackground(scrum.color)
             }
         }
-        .navigationTitle("Daily Scrums")
+        .navigationTitle("Habit Focus")
         .navigationBarItems(trailing: Button(action: {
             isPresented = true
         }) {

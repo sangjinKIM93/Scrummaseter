@@ -16,7 +16,7 @@ struct EditView: View {
             Section(header: Text("Meeting Info")) {
                 TextField("Title", text: $scrumData.title)
                 HStack {
-                    Slider(value: $scrumData.lengthInMinutes, in: 5...30, step: 1.0) {
+                    Slider(value: $scrumData.lengthInMinutes, in: 5...120, step: 5.0) {
                         Text("Length")
                     }
                     Spacer()
@@ -24,26 +24,26 @@ struct EditView: View {
                 }
                 ColorPicker("Color", selection: $scrumData.color)
             }
-            Section(header: Text("Attendees")) {
-                ForEach(scrumData.attendees, id: \.self) { attendee in
-                    Text(attendee)
-                }
-                .onDelete { indices in
-                    scrumData.attendees.remove(atOffsets: indices)
-                }
-                HStack {
-                    TextField("New Attendee", text: $newAttendee)
-                    Button(action: {
-                        withAnimation {
-                            scrumData.attendees.append(newAttendee)
-                            newAttendee = ""
-                        }
-                    }) {
-                        Image(systemName: "plus.circle.fill")
-                    }
-                    .disabled(newAttendee.isEmpty)
-                }
-            }
+//            Section(header: Text("Attendees")) {
+//                ForEach(scrumData.attendees, id: \.self) { attendee in
+//                    Text(attendee)
+//                }
+//                .onDelete { indices in
+//                    scrumData.attendees.remove(atOffsets: indices)
+//                }
+//                HStack {
+//                    TextField("New Attendee", text: $newAttendee)
+//                    Button(action: {
+//                        withAnimation {
+//                            scrumData.attendees.append(newAttendee)
+//                            newAttendee = ""
+//                        }
+//                    }) {
+//                        Image(systemName: "plus.circle.fill")
+//                    }
+//                    .disabled(newAttendee.isEmpty)
+//                }
+//            }
         }
         .listStyle(InsetGroupedListStyle())
     }
