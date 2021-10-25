@@ -15,10 +15,10 @@ struct CardView: View {
                 .font(.headline)
             Spacer()
             HStack {
-                Label("\(scrum.attendees.count)", systemImage: "person.3")
+                Label("+\(scrum.history.count)", systemImage: "hand.thumbsup.fill")
                     .accessibilityElement(children: .ignore)
-                    .accessibilityLabel(Text("Attendees"))
-                    .accessibilityValue(Text("\(scrum.attendees.count)"))
+                    .accessibilityLabel(Text("Days Acheived"))
+                    .accessibilityValue(Text("\(scrum.history.count)"))
                 Spacer()
                 Label("\(scrum.lengthInMinutes)", systemImage: "clock")
                     .padding(.trailing, 20)
