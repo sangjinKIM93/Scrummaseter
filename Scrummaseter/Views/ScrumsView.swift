@@ -22,6 +22,9 @@ struct ScrumsView: View {
                 }
                 .listRowBackground(scrum.color)
             }
+            .onDelete(perform: { indexSet in
+                scrums.remove(atOffsets: indexSet)
+            })
         }
         .navigationTitle("Habit Focus")
         .navigationBarItems(trailing: Button(action: {

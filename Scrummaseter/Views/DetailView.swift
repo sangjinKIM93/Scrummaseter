@@ -15,7 +15,7 @@ struct DetailView: View {
     var body: some View {
         List {
             Section(header: Text("Habit Info")) {
-                NavigationLink(destination: MeetingView(scrum: $scrum)) {
+                NavigationLink(destination: TimerView(scrum: $scrum)) {
                     Label("Focusing Habit", systemImage: "timer")
                         .font(.headline)
                         .foregroundColor(.accentColor)
