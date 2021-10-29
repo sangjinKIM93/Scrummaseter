@@ -11,6 +11,7 @@ import AVFoundation
 struct TimerView: View {
     @Binding var scrum: DailyScrum
     @StateObject var scrumTimer = ScrumTimer()
+    
     private var startMinutes: Int {
         return 60 - scrum.lengthInMinutes
     }
